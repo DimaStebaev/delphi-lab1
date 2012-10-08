@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, TeEngine, Series, ExtCtrls, TeeProcs, Chart;
+  Dialogs, Menus, TeEngine, Series, ExtCtrls, TeeProcs, Chart, XPMan;
 
 type
   TForm1 = class(TForm)
@@ -14,10 +14,17 @@ type
     N3: TMenuItem;
     Chart: TChart;
     Series1: TLineSeries;
+    Gj1: TMenuItem;
+    N4: TMenuItem;
+    PopupMenu: TPopupMenu;
+    N3D1: TMenuItem;
+    XPManifest1: TXPManifest;
     procedure N2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Visualize;
     procedure N3Click(Sender: TObject);
+    procedure N4Click(Sender: TObject);
+    procedure N3D1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,6 +79,29 @@ end;
 procedure TForm1.N3Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure TForm1.N4Click(Sender: TObject);
+begin
+messagedlg('Разработчик - это Стебаев Дмитрий, студент КС-41.', mtInformation, [mbok], 0);
+end;
+
+procedure TForm1.N3D1Click(Sender: TObject);
+var
+i: integer;
+begin
+if n3d1.Tag = 0 then
+begin
+  n3d1.Caption := 'Включить 2D режим';
+  n3d1.Tag := 1;
+  chart.View3D := true;
+end
+else
+begin
+  n3d1.Caption := 'Включить 3D режим';
+  n3d1.Tag := 0;
+  chart.View3D := false;
+end;
 end;
 
 end.

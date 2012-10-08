@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs, StdCtrls, XPMan, Buttons, ExtCtrls;
 
 type
   TForm2 = class(TForm)
@@ -18,11 +18,18 @@ type
     ButtonCancel: TButton;
     Label4: TLabel;
     EditC: TEdit;
+    XPManifest1: TXPManifest;
+    Panel1: TPanel;
+    Panel2: TPanel;
     procedure EditKeyPress(Sender: TObject; var Key: Char);
     procedure FormCreate(Sender: TObject);
     procedure ButtonCancelClick(Sender: TObject);
     procedure ButtonOKClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Panel1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure Panel1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
   public
@@ -98,6 +105,20 @@ end;
 procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 buttoncancel.Click;
+end;
+
+procedure TForm2.Panel1MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+(sender as tpanel).BevelOuter := bvlowered;
+(sender as tpanel).BevelInner := bvlowered;
+end;
+
+procedure TForm2.Panel1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+(sender as tpanel).BevelOuter := bvRaised;
+panel1.BevelInner := bvRaised;
 end;
 
 end.

@@ -1,11 +1,11 @@
 object Form2: TForm2
-  Left = 339
-  Top = 278
+  Left = 261
+  Top = 212
   BorderStyle = bsDialog
   Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099
   ClientHeight = 183
   ClientWidth = 293
-  Color = clBtnFace
+  Color = clGray
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -97,5 +97,33 @@ object Form2: TForm2
     TabOrder = 5
     Text = 'EditC'
     OnKeyPress = EditKeyPress
+  end
+  object Panel1: TPanel
+    Left = 16
+    Top = 48
+    Width = 89
+    Height = 33
+    BevelInner = bvRaised
+    Caption = #1056#1072#1089#1095#1080#1090#1072#1090#1100
+    Color = clSilver
+    TabOrder = 6
+    OnMouseDown = Panel1MouseDown
+    OnMouseUp = Panel1MouseUp
+  end
+  object Panel2: TPanel
+    Left = 64
+    Top = 0
+    Width = 113
+    Height = 33
+    BevelInner = bvRaised
+    Caption = 'Panel2'
+    Color = clTeal
+    TabOrder = 7
+    OnMouseDown = Panel1MouseDown
+    OnMouseUp = Panel1MouseUp
+  end
+  object XPManifest1: TXPManifest
+    Left = 72
+    Top = 8
   end
 end
